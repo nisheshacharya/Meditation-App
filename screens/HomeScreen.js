@@ -5,7 +5,7 @@ import { Audio } from 'expo-av';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const backgroundImage = require("../media/Meditate.gif");
-const meditationImage = require("../media/meditation.gif");
+const meditationImage = require("../media/meditationDark.gif");
 
 export default function HomeScreen() {
   const [started, setStarted] = useState(false);
@@ -49,7 +49,8 @@ export default function HomeScreen() {
           const newCount = prevCount - 1;
           if (total - newCount === restTime) {
             sound1.playAsync();
-            setBackground(meditationImage);
+            
+            
             setPhase('rest');
           }
 
@@ -95,6 +96,7 @@ export default function HomeScreen() {
     }
     setStarted(true);
     setPhase("meditation")
+    setBackground(meditationImage)
   };
 
   const stop = () => {
@@ -233,8 +235,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 30,
     marginBottom: 20,
+    fontWeight: 'bold',
   },
   inputContainer: {
     alignItems: 'center',
@@ -252,10 +255,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     marginHorizontal: 5,
     borderRadius: 5,
+    
   },
   label: {
     color: 'white',
-    marginTop: 5,
+    marginTop: -10,
+    fontSize: 20, 
+    marginBottom: 20,
   },
   buttonContainer: {
     flexDirection: 'column',

@@ -4,14 +4,10 @@
       "**/*"
     ],
     "icon": "./media/AppLogo.png",
-    "font": {
-      "Roboto": {
-        "uri": "./node_modules/react-native-vector-icons/Fonts/Roboto.ttf"
-      }
-    },
+   
     "name": "Meditation App",
     "slug": "meditation",
-    "privacy": "unlisted",
+   
     "version": "1.0.0",
     "orientation": "portrait",
     "description": "This is a mobile app that allows users to set timer for meditation and rest period after meditation. Users can also set a remainder so that they don't miss their meditation any day.",
@@ -22,7 +18,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nisheshacharya.meditationapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -38,6 +38,22 @@
       "eas": {
         "projectId": "72365230-37bf-46ed-9707-741487297fda"
       }
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "sounds": [
+            "./assets/notification.wav"
+          ]
+        }
+      ]
+    ],
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/72365230-37bf-46ed-9707-741487297fda"
     }
   }
 }
